@@ -11,15 +11,15 @@ class ReviewViewSets(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
     parser_classes = [MultiPartParser, FormParser]
     filter_backends = [DjangoFilterBackend, SearchFilter]
-    filterset_fields = ['title']
-    search_fields = ['title']
+
 
 class ConferenceViewSets(viewsets.ModelViewSet):
     queryset = Conference.objects.all()
     serializer_class = ReviewSerializers
     permission_classes = [permissions.IsAuthenticated]
     parser_classes = [MultiPartParser, FormParser]
-
+    filterset_fields = ['title']
+    search_fields = ['title']
 
 class SessionViewSets(viewsets.ModelViewSet):
     queryset = Session.objects.all()
